@@ -30,7 +30,7 @@ class FileInterface:
         try:
             filename = params[0]
             filedata = params[1]
-            mode = 'ab' if os.path.exists(filename) else 'wb'  # Append if file exists
+            mode = 'ab' if os.path.exists(filename) else 'wb'  
             with open(filename, mode) as fp:
                 fp.write(base64.b64decode(filedata))
             return dict(status='OK')
